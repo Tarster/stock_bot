@@ -7,7 +7,7 @@ import apikey
 
 API_KEY = apikey.API_KEY
 BASE_URL = 'http://api.marketstack.com/v1/intraday/latest'
-def get_stock_price(stock_symbol):
+def get_stock_price(stock_symbol:str):
     try:
         params = {
             'access_key': API_KEY,
@@ -17,7 +17,10 @@ def get_stock_price(stock_symbol):
         api_result= requests.get(BASE_URL, params)
         print(api_result)
         json_result = json.loads(api_result.text)
+        print()
         return{"last_price":json_result["data"][0]["last"]}
     except KeyError: 
+        return{"last_price":"You have sent a wrong input. Type 'sym:<stock_symbol>' to get the stock price."}
+    except Exception as _:
         return{"last_price":"You have sent a wrong input. Type 'sym:<stock_symbol>' to get the stock price."}
 
