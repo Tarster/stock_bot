@@ -1,0 +1,15 @@
+{
+    "python.linting.enabled": false,
+    "python.linting.pylintEnabled": true,
+    "cSpell.words": [
+        "apikey",
+        "devsearch",
+        "enctype",
+        "endfor",
+        "whitenoise"
+    ],
+    "cSpell.enableFiletypes": [
+        "!html",
+        "django-html"
+    ]
+}
